@@ -78,13 +78,13 @@ class LazyLoadWatcher {
 
     handleElementLazyLoad(element) {
         if (isElementInViewport(element, this.scrollDom, this.options.inViewportOffset)) {
-            // 先绑定事件，防止从cache中设置src时load事件比绑定先触发
-            element.addEventListener('load', createImageOnloadHandler(this.options));
-
-            // eslint-disable-next-line no-param-reassign
-            element.src = element.dataset.src;
-
-            this.removeElementFromCache(element);
+            if (element.src !== element.dataset.src) {
+                // 先绑定事件，防止从cache中设置src时load事件比绑定先触发
+                element.addEventListener('load', createImageOnloadHandler(this.options));
+                // eslint-disable-next-line no-param-reassign
+                element.src = element.dataset.src;
+                this.removeElementFromCache(element);
+            }
         }
     }
 
