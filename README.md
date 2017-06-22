@@ -86,3 +86,6 @@ const MyComponent = () => {
 };
 ```
 
+## All Props
+
+check file [src/ReactLazyHtmlView.js](src/ReactLazyHtmlView.js)
