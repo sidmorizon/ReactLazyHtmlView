@@ -1,0 +1,48 @@
+{
+  "presets": [
+    [
+      "babel-preset-es2015",
+      {
+        "loose": true,
+        "modules": "commonjs"
+      }
+    ],
+    "babel-preset-react",
+    "babel-preset-stage-0"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        [
+          "babel-plugin-transform-runtime",
+          {
+            "helpers": true,
+            "polyfill": true,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ],
+        "babel-plugin-dev-expression",
+        "babel-plugin-transform-decorators-legacy",
+        "babel-plugin-transform-react-remove-prop-types",
+        "babel-plugin-lodash"
+      ]
+    },
+    "development": {
+      "plugins": [
+        "react-hot-loader/babel",
+        [
+          "babel-plugin-transform-runtime",
+          {
+            "helpers": true,
+            "polyfill": true,
+            "regenerator": true,
+            "moduleName": "babel-runtime"
+          }
+        ],
+        "babel-plugin-transform-decorators-legacy",
+        "babel-plugin-lodash"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.reactLazyImg {
+  background-color: #f8f8f8;
+  min-height: 200px;
+}
+
+.reactLazyLoaded {
+  min-height: 0;
+  animation: kf-reactLazyLoaded-fadeIn .5s
+}
+
+@keyframes kf-reactLazyLoaded-fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
