@@ -2,6 +2,8 @@
 
 Lazy image load support for raw html display
 
+## Demo
+[![Edit mQ6QG8WDO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mQ6QG8WDO)
 
 ## Install
 `yarn add react-lazy-html-view`
