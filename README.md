@@ -3,10 +3,12 @@
 Lazy image load support for raw html display
 
 ## Demo
-[![Edit mQ6QG8WDO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mQ6QG8WDO)
 
+[![Edit mQ6QG8WDO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mQ6QG8WDO)
+[![Edit React image lazy load by certain container scroll](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pOQpM8Dy)
 
 ## Install
+
 `yarn add react-lazy-html-view`
  or
 `npm install react-lazy-html-view`
@@ -14,6 +16,10 @@ Lazy image load support for raw html display
 ## Usage
 
 ### lazy load by window scroll
+
+[![Edit mQ6QG8WDO](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/mQ6QG8WDO)
+
+
 ```js
 import {ReactLazyHtmlView} from 'react-lazy-html-view';
 
@@ -34,6 +40,9 @@ const MyComponent = () => {
 ```
 
 ### lazy load by some container inner scroll
+
+[![Edit React image lazy load by certain container scroll](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pOQpM8Dy)
+
 ```js
 import {ReactLazyHtmlView} from 'react-lazy-html-view';
 
