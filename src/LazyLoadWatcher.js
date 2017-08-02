@@ -5,7 +5,7 @@ import {
     LAZY_IMAGE_CLASS_NAME, LAZY_IMAGE_LOADED_CLASS_NAME,
     THROTTLE_WAIT_MS, DEFAULT_IN_VIEWPORT_OFFSET,
 } from './consts';
-import {isElementInViewport} from './utils';
+import {isElementInViewport,adjustImageWidth} from './utils';
 // import lazyLoadClassNames from './styles.module.scss';
 
 
@@ -79,6 +79,8 @@ class LazyLoadWatcher {
     handleElementLazyLoad(element) {
         if (isElementInViewport(element, this.scrollDom, this.options.inViewportOffset)) {
             if (element.src !== element.dataset.src) {
+                adjustImageWidth(this.options.scope, element);
+
                 // 先绑定事件，防止从cache中设置src时load事件比绑定先触发
                 element.addEventListener('load', createImageOnloadHandler(this.options));
                 // eslint-disable-next-line no-param-reassign

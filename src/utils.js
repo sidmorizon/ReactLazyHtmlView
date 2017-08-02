@@ -79,10 +79,33 @@ function convertToLazyHtml(html, options = {}) {
 }
 
 
+// 如果图片宽度超过了容器宽度，那么重新等比例计算新的高宽设置到图片上
+function adjustImageWidth(container, image) {
+    // this.options.scope.offsetWidth
+    if (!container || !image) {
+        return;
+    }
+    const containerWidth = container.offsetWidth;
+    const imageStyleWidth = parseFloat(image.style.width);
+    const imageStyleHeight = parseFloat(image.style.height);
+    if (!imageStyleWidth || !imageStyleHeight) {
+        return;
+    }
+
+    // 如果图片比容器宽，那么这里按比例纠正图片高度
+    if (imageStyleWidth > containerWidth) {
+        const newHeight = (imageStyleHeight / imageStyleWidth) * containerWidth;
+        image.style.width = containerWidth + 'px';
+        image.style.height = parseInt(newHeight, 10) + 'px';
+    }
+}
+
+
 export {
     getElementPosition,
     isElementHidden,
     isElementInViewport,
     convertToLazyHtml,
+    adjustImageWidth,
 };
 
